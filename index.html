@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Matrix Addition</title>
+
+    </head>
+
+    <body>
+        <h1>Addition of Matrix</h1>
+        <button onclick="start()">START</button><br><br>
+        <div class="two_table_container">
+            <table id="input_1">
+                <tbody>
+                    <tr>
+                        <td id="table_data1"></td>
+                        <td id="table_data2"></td>
+                        <td id="table_data3"></td>
+                    </tr>
+                    <tr>
+                        <td id="table_data4"></td>
+                        <td id="table_data5"></td>
+                        <td id="table_data6"></td>
+                    </tr>
+                    <tr>
+                        <td id="table_data7"></td>
+                        <td id="table_data8"></td>
+                        <td id="table_data9"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="input_2">
+                <tbody>
+                    <tr>
+                        <td id="table_data10"></td>
+                        <td id="table_data11"></td>
+                        <td id="table_data12"></td>
+                    </tr>
+                    <tr>
+                        <td id="table_data13"></td>
+                        <td id="table_data14"></td>
+                        <td id="table_data15"></td>
+                    </tr>
+                    <tr>
+                        <td id="table_data16"></td>
+                        <td id="table_data17"></td>
+                        <td id="table_data18"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br><br>
+        <table id="result_table">
+            <tbody>
+                <tr>
+                    <td id="table_data19"></td>
+                    <td id="table_data20"></td>
+                    <td id="table_data21"></td>
+                </tr>
+                <tr>
+                    <td id="table_data22"></td>
+                    <td id="table_data23"></td>
+                    <td id="table_data24"></td>
+                </tr>
+                <tr>
+                    <td id="table_data25"></td>
+                    <td id="table_data26"></td>
+                    <td id="table_data27"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <script>
+            function start() {
+                let input_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+                let result_table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        input_array[i][j] = Number(prompt(`Enter a number for Row ${i + 1} Column ${j + 1} in 1st Array`));
+                    }
+                }
+                let input_array2 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        input_array2[i][j] = Number(prompt(`Enter a number for Row ${i + 1} Column ${j + 1} in 2nd Array`));
+                        result_table[i][j] = input_array[i][j] + input_array2[i][j];
+                    }
+                }
+
+                document.querySelector("#table_data1").innerHTML = input_array[0][0];
+                document.querySelector("#table_data2").innerHTML = input_array[0][1];
+                document.querySelector("#table_data3").innerHTML = input_array[0][2];
+                document.querySelector("#table_data4").innerHTML = input_array[1][0];
+                document.querySelector("#table_data5").innerHTML = input_array[1][1];
+                document.querySelector("#table_data6").innerHTML = input_array[1][2];
+                document.querySelector("#table_data7").innerHTML = input_array[2][0];
+                document.querySelector("#table_data8").innerHTML = input_array[2][1];
+                document.querySelector("#table_data9").innerHTML = input_array[2][2];
+
+                document.querySelector("#table_data10").innerHTML = input_array2[0][0];
+                document.querySelector("#table_data11").innerHTML = input_array2[0][1];
+                document.querySelector("#table_data12").innerHTML = input_array2[0][2];
+                document.querySelector("#table_data13").innerHTML = input_array2[1][0];
+                document.querySelector("#table_data14").innerHTML = input_array2[1][1];
+                document.querySelector("#table_data15").innerHTML = input_array2[1][2];
+                document.querySelector("#table_data16").innerHTML = input_array2[2][0];
+                document.querySelector("#table_data17").innerHTML = input_array2[2][1];
+                document.querySelector("#table_data18").innerHTML = input_array2[2][2];
+
+                document.querySelector("#table_data19").innerHTML = result_table[0][0];
+                document.querySelector("#table_data20").innerHTML = result_table[0][1];
+                document.querySelector("#table_data21").innerHTML = result_table[0][2];
+                document.querySelector("#table_data22").innerHTML = result_table[1][0];
+                document.querySelector("#table_data23").innerHTML = result_table[1][1];
+                document.querySelector("#table_data24").innerHTML = result_table[1][2];
+                document.querySelector("#table_data25").innerHTML = result_table[2][0];
+                document.querySelector("#table_data26").innerHTML = result_table[2][1];
+                document.querySelector("#table_data27").innerHTML = result_table[2][2];
+            }
+        </script>
+
+
+    </body>
+</body>
+
+</html>
